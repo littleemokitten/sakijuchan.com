@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Sakiju-chan links</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .gradient-bg {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            animation: Gradient 15s ease infinite;
+            /*background: radial-gradient(200% 100% at bottom center, #F7F7B6, #E96F92, #75517D, #1B2947);
+            background: radial-gradient(220% 105% at top center, #1B2947 10%, #75517D 40%, #E96F92 65%, #F7F7B6);
+            background-attachment: fixed;
+            */
+            z-index: -1;
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+            }
+
+            100% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+            }
+        }
+
+        .stars {
+            transform: perspective(500px);
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 0;
+            perspective-origin: 50% 100%;
+            left: 50%;
+            animation: rotate 90s infinite linear;
+        }
+
+        .star {
+            width: 2px;
+            height: 2px;
+            background: #F7F7B6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0 -300px;
+            transform: translate3d(0, 0, -300px);
+            backface-visibility: hidden;
+        }
+        
+        .social-link-buttons .btn {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 1000px) {
+            .social-link-buttons .btn {
+                font-size: 1.5rem;
+                margin-bottom: 1.6em;
+            }
+        }
+
+
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+            .social-link-buttons {
+                padding-left:10vw;
+                padding-right:10vw;
+            }
+        }
+
+        .social-link-buttons a {
+            margin-bottom: 30px;
+            /*width: 80%;*/
+            padding-top:14px;
+            padding-bottom:14px;
+            font-weight: 600;
+        }
+        
+        .shake {
+            animation: shake-animation 4.72s ease infinite;
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes shake-animation {
+            0% {
+                transform: translate(0, 0)
+            }
+
+            1.78571% {
+                transform: translate(5px, 0)
+            }
+
+            3.57143% {
+                transform: translate(0, 0)
+            }
+
+            5.35714% {
+                transform: translate(5px, 0)
+            }
+
+            7.14286% {
+                transform: translate(0, 0)
+            }
+
+            8.92857% {
+                transform: translate(5px, 0)
+            }
+
+            10.71429% {
+                transform: translate(0, 0)
+            }
+
+            100% {
+                transform: translate(0, 0)
+            }
+        }
+        
+        .kitten {
+            z-index: 10;
+            position: fixed;
+            bottom: 0;
+            right: 2vw;
+            min-width: 160px;
+            width: 20vw;
+            max-width: 300px;
+            pointer-events: none;
+        }
+
+        .info-wrapper {
+            position: fixed;
+            right: -300px;
+            top: 14px;
+            max-width: 220px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            padding: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-wrapper img {
+            margin-top: -25px;
+        }
+        .info-wrapper.show {
+            right: 2px;
+        }
+        .info-title-box {
+            display: flex;
+            align-items: top;
+            column-gap: 0px;
+        }
+        .info-title-box p {
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .logo {
+            transition: opacity 0.3s ease;
+        }
+        .logo.transparent {
+            opacity: 0.15;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container text-center bg-transparent position-relative" style="height:150vh;">
+
+        <img src="logo.png" class="logo w-50"
+            style="margin-top:40px; margin-bottom:40px; min-width: 300px;">
+
+        <img src="/local/emokitten/uploads/images/2021/11/1636387827554_emo kitt_1054x263.png" class="d-none w-50"
+            style="margin-top:40px; margin-bottom:40px; min-width: 300px;">
+        
+        <div class="text-center social-link-buttons">
+
+            <a href="/more" target="_blank" class="btn btn-block btn-outline color-white">20% OFF my other links 😏🤫</a>
+            <a href="https://www.instagram.com/sakiju.chan/" target="_blank" class="btn btn-block btn-outline color-white">Follow My Instagram</a>
+
+        </div>
+
+        <p class="position-absolute debug-info" style="bottom: 0; font-size:10px; opacity:0.2;"></p>
+
+    </div>
+
+    <img class="kitten" src="kitten.png">;
+
+    <div class="info-wrapper">
+        <div class="info-title-box">
+          <p>My links are often blocked, so it's best to click here and "Open in browser" first 😜</p>
+          <img height="40" src="arrow.gif">
+        </div>
+    </div>
+    
+    <div class="gradient-bg">
+        <div class="stars"></div>
+    </div>
+
+    <script>
+
+        const debugInfoEl = document.body.querySelector('.debug-info');
+
+        function getUrlParam(name) {
+          const params = new URLSearchParams(window.location.search);
+          return params.get(name) || null;
+        }
+
+        const socialLinkBtns = document.body.querySelectorAll('.social-link-buttons > a');
+        const utmSource = getUrlParam("utm_source");
+
+        if (utmSource) {
+          socialLinkBtns.forEach(link => {
+            try {
+              const url = new URL(link.href);
+        
+              // Set or replace existing utm_source
+              url.searchParams.set("utm_source", utmSource);
+        
+              // Update the link
+              link.href = url.toString();
+              
+            } catch (e) {
+              console.warn("Invalid URL in social link:", link.href);
+            }
+          });
+        }
+        
+        function extractFolderFromURL() {
+            const [, folder] = window.location.pathname.split(/^\/([^/]+)/);
+
+            if (folder) {
+                return folder;
+            }
+
+            // If no folder found, return null or an appropriate default value
+            return null;
+        }
+
+        const folder = extractFolderFromURL() || '';
+
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+        
+        function detectInAppBrowser() {
+          const ua = navigator.userAgent.toLowerCase();
+          const ref = document.referrer || "";
+          const uaHit = /instagram|fb_iab|fbav|fbios|tiktok|musical_ly|BytedanceWebview|messenger/.test(ua);
+          const envHit =
+            !!window.__fbSdkReady__ ||
+            !!window.TikTokWebView ||
+            !!navigator.userAgentData?.brands?.some(b =>
+              /facebook|instagram|musical_ly|tiktok/i.test(b.brand)
+            ) ||
+            /instagram\.com|tiktok\.com|facebook\.com/.test(ref);
+          // const popupBlocked = (() => {
+          //   const w = window.open('about:blank', '_blank');
+          //   if (!w || w.closed) return true;
+          //   w.close();
+          //   return false;
+          // })();
+          return (uaHit || envHit);
+        }
+        
+        window.addEventListener("load", (event) => {
+            
+            setTimeout(() => {
+                
+                if (isMobileDevice()) {
+                    const infoBox = document.querySelector('.info-wrapper');
+                    const logo = document.querySelector('.logo');
+                    infoBox.classList.add('show');
+                    logo.classList.add('transparent');
+                }
+
+            }, 400);
+
+        });
+                
+        /* ─────────────────────────────────────────────
+         NEW SECTION: auto-open in browser
+         ───────────────────────────────────────────── */
+          (function autoOpenInBrowser() {
+              return false;
+            const ua = navigator.userAgent.toLowerCase();
+            const isInApp = detectInAppBrowser();
+
+              // detect if we already forwarded
+              const url = new URL(location.href);
+              const hasForwarded = url.searchParams.get('forward') === 'true';
+              
+              const isAndroid = /android/.test(ua);
+              const isIOS = /iphone|ipad|ipod/.test(ua);
+              const platform = isAndroid ? 'android' : isIOS ? 'ios' : 'other';
+            
+              if (debugInfoEl) debugInfoEl.innerText = `UA: ${navigator.userAgent}\nIn-App: ${isInApp}\nPlatform: ${platform}\nIs mobile: ${isMobileDevice()}`;
+
+              //Stop infinate loops
+              if (hasForwarded) {
+                    if (debugInfoEl) debugInfoEl.innerText += `Has already forwarded`;
+                  return false;
+              }
+              
+            if (!isInApp) return; // do nothing if normal browser
+              
+            const redirectUrl = new URL(location.href);
+            redirectUrl.searchParams.set('forward', 'true');
+              
+            // Delay slightly so page elements render first
+            setTimeout(() => {
+              try {
+                // open the real browser depending on platform
+                  
+                  if (isAndroid) {
+                     // Android "intent://" trick (shows system popup)
+                    location.href = `intent://${redirectUrl.host}${redirectUrl.pathname}${redirectUrl.search}#Intent;scheme=https;package=com.android.chrome;end`;
+                  } else if (isIOS) {
+                    // iOS Safari deep open
+                    location.href = redirectUrl.toString().replace(/^https?:\/\//, 'googlechrome://');
+                  } else {
+                    // fallback for other platforms
+                    location.href = redirectUrl.toString();
+                  }
+                  
+              } catch (e) {
+                console.warn('Redirect failed', e);
+                if (debugInfoEl) debugInfoEl.innerText += `\nRedirect failed: ${e.message || e}`;
+              }
+            }, 1200);
+
+        
+          })();
+
+        
+        const starsEl = document.querySelector('.stars');
+        const stars = 800;
+        const r = 800;
+
+        let html = '';
+
+        for (let i = 0; i < stars; i++) {
+
+            const scale = 0.2 + (Math.random() * 1);
+            const curR = r + (Math.random() * 300);
+
+            const css = `transform-origin: 0px 0px ${curR}px; transform: translate3d(0px, 0px, -${curR}px) rotateY(${(Math.random() * 360)}deg) rotateX(${(Math.random() * -50)}deg) scale(${scale});`;
+
+            html += `<div class="star" style="${css}"></div>`;
+        }
+
+        starsEl.innerHTML = html;
+
+    </script>
+
+</body>
+
+</html>
