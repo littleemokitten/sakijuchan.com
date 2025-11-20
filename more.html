@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!--<link type="text/css" rel="stylesheet" href="/themes/blocks-editor-v1/css/style.css">-->
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Sakiju-chan links</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        
+        .gradient-bg {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            animation: Gradient 15s ease infinite;
+            /*background: radial-gradient(200% 100% at bottom center, #F7F7B6, #E96F92, #75517D, #1B2947);
+            background: radial-gradient(220% 105% at top center, #1B2947 10%, #75517D 40%, #E96F92 65%, #F7F7B6);
+            background-attachment: fixed;
+            */
+            z-index: -1;
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+            }
+
+            100% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+            }
+        }
+
+        .stars {
+            transform: perspective(500px);
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 0;
+            perspective-origin: 50% 100%;
+            left: 50%;
+            animation: rotate 90s infinite linear;
+        }
+
+        .star {
+            width: 2px;
+            height: 2px;
+            background: #F7F7B6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0 -300px;
+            transform: translate3d(0, 0, -300px);
+            backface-visibility: hidden;
+        }
+        
+        .social-link-buttons .btn {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 1000px) {
+            .social-link-buttons .btn {
+                font-size: 1.5rem;
+                margin-bottom: 1.6em;
+            }
+        }
+
+
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+            .social-link-buttons {
+                padding-left:10vw;
+                padding-right:10vw;
+            }
+        }
+
+        .social-link-buttons a {
+            margin-bottom: 30px;
+            /*width: 80%;*/
+            padding-top:14px;
+            padding-bottom:14px;
+            font-weight: 600;
+        }
+
+        .shake {
+            animation: shake-animation 4.72s ease infinite;
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes shake-animation {
+            0% {
+                transform: translate(0, 0)
+            }
+
+            1.78571% {
+                transform: translate(5px, 0)
+            }
+
+            3.57143% {
+                transform: translate(0, 0)
+            }
+
+            5.35714% {
+                transform: translate(5px, 0)
+            }
+
+            7.14286% {
+                transform: translate(0, 0)
+            }
+
+            8.92857% {
+                transform: translate(5px, 0)
+            }
+
+            10.71429% {
+                transform: translate(0, 0)
+            }
+
+            100% {
+                transform: translate(0, 0)
+            }
+        }
+        
+        .kitten {
+            z-index: 10;
+            position: fixed;
+            bottom: 0;
+            right: 2vw;
+            min-width: 200px;
+            width: 24vw;
+            max-width: 320px;
+            pointer-events: none;
+        }
+
+        .info-wrapper {
+            position: fixed;
+            right: -300px;
+            top: 14px;
+            max-width: 220px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            padding: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-wrapper img {
+            margin-top: -25px;
+        }
+        .info-wrapper.show {
+            right: 2px;
+        }
+        .info-title-box {
+            display: flex;
+            align-items: top;
+            column-gap: 0px;
+        }
+        .info-title-box p {
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .logo {
+            transition: opacity 0.3s ease;
+        }
+        .logo.transparent {
+            opacity: 0.15;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container text-center bg-transparent">
+
+        <img src="logo.png" class="logo w-50"
+            style="margin-top:40px; margin-bottom:40px; min-width: 300px;">
+
+        <div class="text-center social-link-buttons">
+
+            <a target="_blank" class="btn btn-block btn-lg btn-outline color-light shake" style="font-weight: 800;">Loading discount...</a>
+            <a target="_blank" class="btn btn-block btn-lg btn-outline color-light shake">Loading discount...</a>
+            
+            <a href="https://instagram.com/justemokitten" target="_blank" class="btn btn-block btn-outline color-white"><img style="vertical-align: text-bottom;" src="instagram.svg" width="40"> If link doesn't work, check my intsa ;)</a>
+
+        </div>
+
+    </div>
+
+    <img class="kitten" src="kitten2.png">;
+
+    <div class="info-wrapper">
+        <div class="info-title-box">
+          <p>My links get blocked by TikTok, so it's best to click here and "Open in browser" first 😜</p>
+          <img height="40" src="arrow.gif">
+        </div>
+    </div>
+    
+    <div class="gradient-bg">
+        <div class="stars"></div>
+    </div>
+
+    <script>
+
+        function getUrlParam(name) {
+          const params = new URLSearchParams(window.location.search);
+          return params.get(name) || null;
+        }
+
+        const utmSource = getUrlParam("utm_source");
+        
+        function extractFolderFromURL() {
+            const [, folder] = window.location.pathname.split(/^\/([^/]+)/);
+
+            if (folder) {
+                return folder;
+            }
+
+            // If no folder found, return null or an appropriate default value
+            return null;
+        }
+
+        const dynamicLinksObj = {
+            default:[
+                {index: 0, text: '20% Discount OF! 🤫', href: 'https://onlyfans.com/sakiju.chan'},
+                {index: 1, text: '20% Discount Fansloo! 😏', href: 'https://fans.ly/r/Sakijuchan'},
+            ],
+            tiktok:[
+                {index: 0, text: '20% Discount OF! 🤫', href: 'https://onlyfans.com/sakiju.chan/c3'},
+                {index: 1, text: '20% Discount Fansloo! 😏', href: 'https://fans.ly/Sakijuchan/t1'},
+            ],
+            instagram:[
+                {index: 0, text: '20% Discount OF! 🤫', href: 'https://onlyfans.com/sakiju.chan/c2'},
+                {index: 1, text: '20% Discount Fansloo! 😏', href: 'https://fans.ly/Sakijuchan/t0'},
+            ]
+        };
+
+        const socialButtons = document.querySelectorAll('.social-link-buttons > .btn');
+
+        const folderLinkMap = {
+            'more': 'tiktok', //tiktok
+            'discount': null, //reddit
+            'sign-up': null, //twitter
+            'links': null, //insta
+            //'bonus-video': null
+        };
+
+        const folder = extractFolderFromURL() || '';
+
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+
+        window.addEventListener("load", (event) => {
+
+            setTimeout(() => {
+
+                let dynamicLinkKey = folderLinkMap[folder] ?? 'default';
+
+                if (utmSource === 'ig') dynamicLinkKey = 'instagram';
+                
+                const dynamicLinks = dynamicLinksObj[dynamicLinkKey] ?? dynamicLinksObj.default;
+                
+                for (link of dynamicLinks) {
+                    const text = link.text;
+                    const href = link.href;
+                    const index = link.index;
+
+                    if (text) socialButtons[index].innerText = text;
+                    if (href) socialButtons[index].setAttribute('href', href);
+                }
+
+                //if (ofOrigins[folder]) socialButtons[0].href += ofOrigins[folder];
+                
+                if (isMobileDevice()) {
+                    const infoBox = document.querySelector('.info-wrapper');
+                    const logo = document.querySelector('.logo');
+                    infoBox.classList.add('show');
+                    logo.classList.add('transparent');
+                }
+
+            }, 900);
+
+        });
+
+        const starsEl = document.querySelector('.stars');
+        const stars = 800;
+        const r = 800;
+
+        let html = '';
+
+        for (let i = 0; i < stars; i++) {
+
+            const scale = 0.2 + (Math.random() * 1);
+            const curR = r + (Math.random() * 300);
+
+            const css = `transform-origin: 0px 0px ${curR}px; transform: translate3d(0px, 0px, -${curR}px) rotateY(${(Math.random() * 360)}deg) rotateX(${(Math.random() * -50)}deg) scale(${scale});`;
+
+            html += `<div class="star" style="${css}"></div>`;
+        }
+
+        starsEl.innerHTML = html;
+
+    </script>
+
+<!-- Default Statcounter code for Emo Kitten
+https://emokitten.com -->
+<script type="text/javascript">
+    var sc_project=12908897; 
+    var sc_invisible=1; 
+    var sc_security="aef5321c"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12908897/0/aef5321c/1/"
+    alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
